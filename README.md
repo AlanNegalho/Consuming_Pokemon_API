@@ -1,16 +1,38 @@
-# consuapipoke
+# Consuming_Pokemon_API
 
-A new Flutter project.
+Este é um aplicativo simples em Flutter que consome a API pública do Pokemon para exibir informações sobre diferentes pokemons. 
 
-## Getting Started
+## Instalação
 
-This project is a starting point for a Flutter application.
+Antes de executar o aplicativo, é necessário ter o Flutter instalado na máquina. Para instalar o Flutter, siga as instruções em https://flutter.dev/docs/get-started/install.
 
-A few resources to get you started if this is your first Flutter project:
+Após ter o Flutter instalado, clone este repositório em sua máquina. Em seguida, execute o seguinte comando no terminal na pasta raiz do projeto:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+flutter pub get
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Este comando irá baixar todas as dependências necessárias para executar o aplicativo.
+
+## Executando o aplicativo
+
+Para executar o aplicativo, abra um emulador ou conecte um dispositivo físico com depuração USB habilitada. Em seguida, execute o seguinte comando na pasta raiz do projeto:
+
+```
+flutter run
+```
+
+O aplicativo será compilado e executado no emulador ou dispositivo físico conectado.
+
+## Funcionalidades
+
+
+O aplicativo  exibe informações detalhadas sobre cada pokemon, como seu tipo, habilidades, estatísticas.
+
+## API
+
+Este aplicativo consome a API pública do Pokemon disponível em https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json. 
+
+## Contribuição
+
+Este é um projeto simples criado para fins educacionais. Se você quiser contribuir, sinta-se à vontade para enviar pull requests ou reportar problemas na seção de issues deste repositório.
