@@ -36,8 +36,13 @@ Este aplicativo consome a API pública do Pokemon disponível em https://raw.git
 ## Contribuição
 
 Este é um projeto simples criado para fins educacionais. Se você quiser contribuir, sinta-se à vontade para enviar pull requests ou reportar problemas na seção de issues deste repositório.
-  
-![Captura de ecrã de 2023-05-10 10-10-00](https://github.com/AlanNegalho/Consuming_Pokemon_API/assets/107214420/27f35f3a-d7fb-4d00-938c-2d6699e2ecdb)
 
-![Captura de ecrã de 2023-05-10 10-10-13](https://github.com/AlanNegalho/Consuming_Pokemon_API/assets/107214420/ca7ae37e-7471-44f7-be28-b54d78af2818)
 
+
+![Captura de ecrã de 2023-05-10 20-05-45](https://github.com/AlanNegalho/Consuming_Pokemon_API/assets/107214420/bbf391be-1923-4916-b9d0-90636b50fbc5)
+
+
+![Captura de ecrã de 2023-05-10 20-06-17](https://github.com/AlanNegalho/Consuming_Pokemon_API/assets/107214420/8a816cd7-279d-48b1-b0ac-647163c4d795)
+
+
+![Captura de ecrã de 2023-05-10 20-08-42](https://github.com/AlanNegalho/Consuming_Pokemon_API/assets/107214420/2c817e19-c6e9-47b4-bc3f-904d4312f198)
