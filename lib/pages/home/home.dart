@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import '../api/api.dart';
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,45 +29,70 @@ class MyHomePage extends StatelessWidget {
               //borderRadius: BorderRadius.vertical(bottom: Radius.circular(10)),
 
               ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Poke Bola',
-                    style: TextStyle(color: Colors.black, fontSize: 35),
-                  ),
-                  Image.asset(
-                    "assets/poke.png",
-                    width: double.tryParse("50"),
-                  ),
-                ],
-              ),
-              /* Theme.of(context).textTheme.titleLarge) */
-              const SizedBox(
-                width: 10,
-              ),
-            ],
+          child: Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'PokeBola',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 28,
+                          fontStyle: FontStyle.italic),
+                    ),
+                    Image.asset(
+                      "assets/poke.png",
+                      width: double.tryParse("50"),
+                    ),
+                  ],
+                ),
+                /* Theme.of(context).textTheme.titleLarge) */
+                const SizedBox(
+                  width: 50,
+                ),
+                TextField(
+                  cursorColor: Colors.white,
+                  decoration: const InputDecoration(
+                      hintText: '🔎 Pesquisa..',
+                      hintStyle: TextStyle(color: Colors.yellow)),
+                  controller: controller,
+                  onChanged: (value) => setState(() {}),
+                  style: const TextStyle(color: Colors.black),
+                )
+              ],
+            ),
           ),
         ),
       ),
-      body: FutureBuilder<List<Dados>>(
-        future: dados(),
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            return const Center(
-              child: Text('An error has occurred!'),
-            );
-          } else if (snapshot.hasData) {
-            return PokemonsList(pokemons: snapshot.data!);
-          } else {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
+      body: Column(
+        children: [
+          Expanded(
+            child: FutureBuilder<List<Dados>>(
+              future: dados(),
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return const Center(
+                    child: Text('An error has occurred!'),
+                  );
+                } else if (snapshot.hasData) {
+                  return PokemonsList(
+                      pokemons: snapshot.data!
+                          .where((pokemon) => pokemon.name!
+                              .toLowerCase()
+                              .contains(controller.text.toLowerCase()))
+                          .toList());
+                } else {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -160,10 +192,10 @@ class PokemonsList extends StatelessWidget {
                     Text(
                       "${pokemons[index].name}",
                       style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                      ),
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic),
                     ),
                   ],
                 ),
