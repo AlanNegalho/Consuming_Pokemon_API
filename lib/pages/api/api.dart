@@ -51,7 +51,7 @@ class Dados {
     name = json['name'];
     img = json['img'];
     num = json['num'];
-    type = json['type'].toString();
+    type = json['type'][0].toString();
     height = json['height'];
     weight = json['weight'];
     weaknesses = json['weaknesses'].cast<String>();

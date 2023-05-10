@@ -1,7 +1,6 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 
-import 'home.dart';
+import 'pages/home/home.dart';
 
 void main() {
   runApp(const MyApp());
